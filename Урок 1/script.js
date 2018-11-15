@@ -12,7 +12,7 @@ let money = prompt("Ваш бюджет на месяц?"),
         timeData: time,
         expenses: {
             oneQuestion: twoQuestion,
-            threeQuestion: forQuestion
+            threeQuestion: forQuestion,
         },
         optionalExpenses: {},
         income: [],
