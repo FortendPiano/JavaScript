@@ -1,23 +1,27 @@
 'use strict';
 
 let money = prompt("Ваш бюджет на месяц?"),
-    time = prompt("Введите дату в формате YYYY-MM-DD"),
-    oneQuestion = prompt("Введите обязательную статью расходов в этом месяце"),
-    twoQuestion = prompt("Во сколько обойдется?"),
-    threeQuestion = prompt("Введите обязательную статью расходов в этом месяце"),
-    forQuestion = prompt("Во сколько обойдется?"),
-
-    appData = {
+    time = prompt("Введите дату в формате YYYY-MM-DD");
+    
+let questionOne = prompt("Введите обязательную статью расходов в этом месяце"),
+    questionTwo = prompt("Во сколько обойдется?"),
+    questionThree = prompt("Введите обязательную статью расходов в этом месяце"),
+    questionFor = prompt("Во сколько обойдется?"); 
+    
+let appData = {
         budget: money,
         timeData: time,
         expenses: {
-            oneQuestion: twoQuestion,
-            threeQuestion: forQuestion,
+            questionOne: questionTwo,
+            questionThree: questionFor
         },
         optionalExpenses: {},
         income: [],
         savings: false
     };
+      
+    appData.expenses.questionOne = questionTwo;
+    appData.expenses.questionThree = questionFor;
 
     console.log(appData.expenses);
     alert("Бюджет на 1 день: " + (money/30).toFixed());
