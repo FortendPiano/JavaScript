@@ -3,7 +3,7 @@ let str = "урок - 3 - был слишком легким",
     firstUpper = (str[0].toUpperCase() + str.slice(1, 30)),
     replacement = (firstUpper.replace(/-/g, " ")),
     cut = (replacement.slice(0, 23)),
-    cutUp = (replacement.replace("легким", "оо"));
+    cutUp = (replacement.replace("им", "оо"));
 console.log(replacement);
 
 //3е задание
@@ -28,16 +28,17 @@ sqrt();
 
 //5е задание
 function myLife(text) {
-    alert(text = prompt("Введите строку!", ''));
-    if (text != "") {
+    alert(text = prompt("Введите число!", ''));
+    if (text != "" || text != isNaN) {
         document.write(text.trim() + '<br>');
     } else {
-        alert("Вы ввели не строку! Перезагрузите страницу!");
+        alert("Вы ввели строку! Перезагрузите страницу!");
     }
     let string = text.slice(0, 50),
         mass = string.split(' ');
     mass.splice(mass.length - 1, 1 + '...');
     string = mass.join(' ');
     document.write(string + '...');
+    //console.log(text != "isNaN");
 }
 myLife();
