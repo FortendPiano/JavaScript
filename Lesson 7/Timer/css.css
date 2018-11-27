@@ -1,0 +1,17 @@
+body {
+    padding-top: 250px;
+    background-color: rgba(0, 1, 2, 0.959);
+}
+div {
+    text-align: center;
+    bottom: 1000px;
+}
+span {
+    text-align: center;
+    border: 5px solid green;
+    font-size: 130px;
+    border-radius: 50px;
+    padding: 40px;
+    background-color: cyan;
+    color: blue;
+}
