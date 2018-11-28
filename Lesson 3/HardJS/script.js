@@ -26,19 +26,27 @@ function sqrt() {
 }
 sqrt();
 
-//5е задание
+/*По дополнительному:
+- сделай чтобы в консоль вывелось легкоо(вырезанное слово с заменными буквами)
+- числа принимаются как строки(надо как числа и сказать что не строка)*/
+//Сделал что бы если вписываешь число, тип  был число(number)
+
 function myLife(text) {
-    alert(text = prompt("Введите число!", ''));
-    if (text != "" || text != isNaN) {
-        document.write(text.trim() + '<br>');
+    alert(text = prompt("Введите строку!", ''));
+    if (!isNaN(text)) {
+        alert("Вы ввели число! Перезагрузите страницу!");
+        text = +text;
     } else {
-        alert("Вы ввели строку! Перезагрузите страницу!");
+        document.write(text.trim() + '<br>');
+        alert("Все в порядке!");
     }
+    
     let string = text.slice(0, 50),
         mass = string.split(' ');
     mass.splice(mass.length - 1, 1 + '...');
     string = mass.join(' ');
     document.write(string + '...');
-    //console.log(text != "isNaN");
+    
+    console.log(typeof(text));
 }
 myLife();
