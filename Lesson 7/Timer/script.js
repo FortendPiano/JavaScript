@@ -16,7 +16,7 @@ function oClock() {
         }
         if(seconds < 10) {
             seconds = "0" + seconds;
-            time = hours + ":" + minutes + ":" + seconds;
+            //time = hours + ":" + minutes + ":" + seconds;
 
         }
         span.textContent = time;
