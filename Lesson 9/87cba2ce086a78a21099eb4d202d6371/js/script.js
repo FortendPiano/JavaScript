@@ -92,12 +92,13 @@ window.addEventListener('DOMContentLoaded', function () {
     let more = document.querySelector('.more'),
         overlay = document.querySelector('.overlay'),
         close = document.querySelector('.popup-close'),
-        btn = document.querySelectorAll('.description-btn'),
-        func = function () {
-            overlay.style.display = 'block';
-            this.classList.add('more-splash');
-            document.body.style.overflow = 'hidden';
-        };
+        btn = document.querySelectorAll('.description-btn');
+
+    function func() {
+        overlay.style.display = 'block';
+        this.classList.add('more-splash');
+        document.body.style.overflow = 'hidden';
+    }
     more.addEventListener('click', func);
     for (let i = 0; i < btn.length; i++) {
         btn[i].addEventListener('click', func);
