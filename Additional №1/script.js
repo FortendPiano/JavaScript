@@ -30,19 +30,46 @@ let countries = ["Австралия", "Австрия", "Азербайджан
     "Французская Гвиана", "Хорватия", "Центральноафриканская Республика", "Чад", "Черногория", "Чехия",
     "Чили", "Швейцария", "Швеция", "Шри-Ланка", "Эквадор", "Экваториальная Гвинея", "Эритрея", "Эстония",
     "Эфиопия", "ЮАР", "Ямайка", "Япония"];
+
 let input = document.getElementById('country'),
-    list =  document.getElementById('list'),
-    arr = [];
+    list = document.getElementById('list');
 
-//list.appendChild(select);
-list.autocomplete([list.textContent = arr]);
-input.addEventListener('input', function() {
+input.addEventListener('keyup', complete);
+list.addEventListener('click', selectWord);
 
-});
-input.addEventListener('change', function() {
-    list.textContent = null;
-});
-console.log(list);
+function complete() {
+  let val = input.value.trim().toLowerCase();
+  if(val) {
+    let words = countries.filter(function(item) {
+      return item.toLowerCase().indexOf(val) === 0;
+    });
+    list.innerHTML = getCompileHtml(words);
+    list.style.display = 'block';
+    positionList();
+  } else {
+    list.style.display = 'none';
+  }
+}
 
+function getCompileHtml(words) {
+  let html = '';
+  for (let i = 0; i < words.length; i++) {
+    html += `<div> ${words[i]} </div>`
+  }
+  return html;
+}
+function positionList() {
+  list.style.width = input.offsetWidth + 'px';
+  let XY = input.getBoundingClientRect();
+  list.style.left = XY.left + documentElement.scrollLeft + 'px';
+  list.style.top = XY.bottom + documentElement.scrollTop + 'px';
+}
 
+function selectWord(event) {
+  let target = event.target;
+  if (target.parentNode === list) {
+    input.value = target.innerHTML;
+    list.style.display = 'none';
+  }
+}
 
