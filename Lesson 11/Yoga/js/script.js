@@ -162,15 +162,9 @@ window.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    let messageBF = {
-        loading: 'Загрузка...',
-        success: 'Спасибо! Скоро мы с Вами свяжемся!',
-        failure: 'Что-то не так...'
-    };
-
     let formBF = document.getElementById('form'),
         inputBF = formBF.getElementsByTagName('input'),
-        statusMessageBF = document.createElement('div');
+        statusMessageB= document.createElement('div');
 
     inputBF[1].addEventListener('input', function () {
         this.value = this.value.replace(/[^0-9+]/g, '');
@@ -199,11 +193,11 @@ window.addEventListener('DOMContentLoaded', function () {
 
         requestBF.addEventListener('readystatechange', function () {
             if (requestBF.readyState < 4) {
-                statusMessageBF.textContent = messageBF.loading;
+                statusMessageBF.textContent = message.loading;
             } else if (requestBF.readyState === 4 && requestBF.status == 200) {
-                statusMessageBF.textContent = messageBF.success;
+                statusMessageBF.textContent = message.success;
             } else {
-                statusMessageBF.textContent = messageBF.failure;
+                statusMessageBF.textContent = message.failure;
             }
         });
 
