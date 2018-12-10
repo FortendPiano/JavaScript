@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('.text-center, .col-sm-7 ul li').on('click', function() {
+    $('.text-center, .col-sm-7 ul li:eq(1)').on('click', function() {
         $('.overlay').animate(
             {
                 opacity: "show"
